@@ -2,16 +2,20 @@ version: "3.8"
 
 services:
   scratch:
-    image: scratch
+    image: busybox:latest
     deploy:
       replicas: 0
     networks:
       - public
+    labels:
+      - "traefik.enable=false"
+      - "com.centurylinklabs.watchtower.enable=false"
 
 networks:
   public:
-    driver: overlay
+    name: public
+    driver: bridge
     attachable: true
     ipam:
       config:
-        - subnet: 172.16.200.0/24
+        - subnet: 172.16.201.0/24
