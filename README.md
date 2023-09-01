@@ -4,7 +4,7 @@ This is a placeholder project. It provides a running and available docker swarm 
 other services and especially by the gateway itself to expose endpoints to the web. It only needs to be startet once.
 Separating it means to prevent deletion on teardown of other services or conflicts with other services.
 
-If you want to expose an service for the RGDZ stack your service should be bound to the netowork named:
+If you want to expose an service for the MGDM2OEREB stack your service should be bound to the netowork named:
 
 ```
 sh_oereb_gateway_network_public
@@ -16,13 +16,13 @@ services. Better be explicit than sorry.
 To start the meta stack:
 
 ```shell
-docker stack deploy sh_oereb_gateway_network -c sh.oereb.gateway.network/docker-compose.yml
+docker compose up -d
 ```
 
 To check if everything went well:
 
 ```shell
-docker service ls
+docker ps
 ```
 
 should show
